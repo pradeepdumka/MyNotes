@@ -11,3 +11,18 @@ Angular takes the following steps to load our first view.
 6. Displayes the template (*app.component.html*)
 # Index.html loads first
 Web apps need a starting point. Index.html is usually the first page to load. Let us open the file and find out what it contains. You will find it under the src folder.
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GettingStarted</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
