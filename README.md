@@ -9,3 +9,5 @@ Angular takes the following steps to load our first view.
 4. Load & execute Root Module (*app.module.ts*)
 5. Executes the Root Component (*app.component.ts*)
 6. Displayes the template (*app.component.html*)
+# Index.html loads first
+Web apps need a starting point. Index.html is usually the first page to load. Let us open the file and find out what it contains. You will find it under the src folder.
