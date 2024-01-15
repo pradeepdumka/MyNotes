@@ -50,6 +50,67 @@ const closureExample = outerFunction();
 >Call the innerFunction, which still has access to outerVariable.   
 closureExample(); // Output: I am from the outer function .
 
+=========================================================================================
+
+# What is Event bubbling & Capturing javascript?
+Event Bubbling and event capturing are tow way of the event propagation mechanism in the DOM in java Script.
+>Event Bubbling:  
+
+  In the Event Bubbling event proparagate up to the dom tree that means event start  from target (child) to parent element.
+  its like a bubble rising to the surface of the water.
+
+>Example:  
+
+<div id="outer">
+  <button id="inner">Click me</button>
+</div>  
+
+<script>  
+
+  document.getElementById('outer').addEventListener('click', function() {  
+    console.log('Outer div clicked');  
+  });  
+
+
+  document.getElementById('inner').addEventListener('click', function() {  
+    console.log('Inner button clicked');  
+  });  
+</script>  
+
+here if we clicked on the inner button then the outer div event is executed .because here the event bubble up from innner div to parent div.  
+
+> Event Capturing (or Trickling):  
+ 
+  In Event Capturing the event propagate from root(parent ) element to child . and it's trickles down from the DOM hierarchy to the target element.
+
+  For the Capturing we need to pass **true** to third parameter in **addEventlistner** . 
+
+>Example:  
+
+<div id="outer">  
+  <button id="inner">Click me</button>
+</div>
+
+<script>
+  document.getElementById('outer').addEventListener('click', function() {
+    console.log('Outer div clicked');
+  }, true);
+
+  document.getElementById('inner').addEventListener('click', function() {
+    console.log('Inner button clicked');
+  });
+</script>
+
+In this Example if we clicked on the inner Div so first outer div event is called because here we sat the event captuaring flag to true.
+
+=========================================================================================
+
+ 
+
+
+
+
+
 
 
 
