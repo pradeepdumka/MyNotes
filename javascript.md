@@ -61,21 +61,29 @@ Event Bubbling and event capturing are tow way of the event propagation mechanis
 
 >Example:  
 
-<div id="outer">
+<div id="outer"> 
+
   <button id="inner">Click me</button>
+
 </div>  
 
-<script>  
 
-  document.getElementById('outer').addEventListener('click', function() {  
-    console.log('Outer div clicked');  
-  });  
+<script>    
 
+  document.getElementById('outer').addEventListener('click', function() {    
 
-  document.getElementById('inner').addEventListener('click', function() {  
-    console.log('Inner button clicked');  
-  });  
-</script>  
+    console.log('Outer div clicked');   
+
+  });    
+
+  document.getElementById('inner').addEventListener('click', function() {    
+
+    console.log('Inner button clicked');   
+
+  });    
+
+</script>    
+
 
 here if we clicked on the inner button then the outer div event is executed .because here the event bubble up from innner div to parent div.  
 
@@ -87,24 +95,57 @@ here if we clicked on the inner button then the outer div event is executed .bec
 
 >Example:  
 
-<div id="outer">  
-  <button id="inner">Click me</button>
-</div>
+"<div id="outer">  
+  
+  <button id="inner">Click me</button>  
 
-<script>
-  document.getElementById('outer').addEventListener('click', function() {
-    console.log('Outer div clicked');
-  }, true);
+</div>  
 
-  document.getElementById('inner').addEventListener('click', function() {
-    console.log('Inner button clicked');
-  });
-</script>
+<script>  
+
+  document.getElementById('outer').addEventListener('click', function() {  
+
+    console.log('Outer div clicked');  
+
+  }, true);  
+  
+  document.getElementById('inner').addEventListener('click', function() {  
+
+    console.log('Inner button clicked');  
+
+  });  
+
+</script>   
 
 In this Example if we clicked on the inner Div so first outer div event is called because here we sat the event captuaring flag to true.
 
 =========================================================================================
+# Explain Event delegation?
+>Event Deligation is a technique where we attached one single event listner in parent element for the every child element and use event bubbling for trigger child elements events.  Event deligation is exist becoz event bubbling is exist .and we can say it is a better wey to handle events in web pages.
+* we write less code  when we use event delegation.
+* Same memory becz we use only one event listner for nth child.
+* **Efficiency** it improve the performance of the web pages
+* It works good for dynamic add or remove elemnts becz here we attached event listner in parent static element.
+<code>
+  <div class="container">
+      <div class="row text-center mt-5">
+        <div class="col-2">
+          <ul id="category">
+            <li id="laptop" att>Laptop</li>
+            <li id="mobile">Mobile</li>
+            <li id="shoes">Shoes</li>
+            <li id="homeItems">Home Items</li>
+            <li id="gifts">Gifts</li>
+          </ul>
+        </div>
+      </div>
+    </div>  
 
+    let outerDiv = document.getElementById('category'); 
+    outerDiv.addEventListener('click',(e)=>{
+      console.log(e.target.id)
+    })
+</code>
  
 
 
