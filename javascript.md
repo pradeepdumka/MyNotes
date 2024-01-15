@@ -40,9 +40,12 @@
   return innerFunction; .
 } .
 >Call outerFunction and store the returned innerFunction in a variable .
+
   const closureExample = outerFunction(); .
+  
 >Call the innerFunction, which still has access to outerVariable .
-   closureExample(); // Output: I am from the outer function .
+
+  closureExample(); // Output: I am from the outer function .
 
 
 
