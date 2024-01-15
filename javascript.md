@@ -30,9 +30,9 @@
 >>In other words, a closure gives you access to an outer function's scope from an inner function. .
 
 
-     > function outerFunction() { .
+     > function outerFunction() {  
 
-        let outerVariable = 'I am from the outer function' .
+        let outerVariable = 'I am from the outer function'  
 
         function innerFunction() { .
 
